@@ -23,7 +23,7 @@ void print(char tic[3][3])
     cout<<"  "<<tic[2][0]<<"  |  "<<tic[2][1] <<"  |  "<<tic[2][2] <<"  \n";
 
 }
-
+// Game board
 void board(char tic[3][3])
 {
 		cout<<endl<<"\t \t \t \t \t \t  Tic Tac Toe "<<endl;
@@ -33,7 +33,7 @@ void board(char tic[3][3])
 		cout<<endl<<endl<<"First player : O "<<endl<<"Secound player : X "<<endl<<endl;
 }
 
-
+// Check winner
 bool winChk(char tic[3][3], char player )
 {
 			 for(int i=0; i<3; i++)
@@ -48,6 +48,8 @@ bool winChk(char tic[3][3], char player )
 			}
 		return false;
 }
+
+//Check draw
 
 bool draw(char tic[3][3])
 {
@@ -66,9 +68,9 @@ bool draw(char tic[3][3])
 	return true;
 }
 
+//Mini max
 
-// MINI MAX CODE
-
+//Evaluate score
 int evaluate(char tic[3][3])
 {
 	if( winChk(tic,'X')==true )
@@ -93,6 +95,7 @@ return score;
 if( draw(tic) )
 return 0;
 
+//maximizing player
 if(isMax)
 	{
 		int BestScore = INT_MAX;
@@ -115,6 +118,8 @@ if(isMax)
 		}	
 		return BestScore;
 	}	
+
+    //minimizing player
 else
 	{
 		int BestScore = INT_MIN;
@@ -142,6 +147,8 @@ else
 
 	
 }
+
+//Find best move
 
 void BestMove(char tic[3][3])
 {
@@ -176,13 +183,6 @@ void BestMove(char tic[3][3])
 int main()
 {	char choice;
 	int game;
-
-	
-	//minimax
-	
-	
-	
-	//minimax
 	 
 	do{
 		
@@ -194,6 +194,7 @@ int col;
 	bool check=true;
 	board(tic);
 	bool win=false;
+//Game mode
 
 			cout<<"Do want to play two player or against AI "<<endl;
 			cout<<"1. Two Players "<<endl;
@@ -206,6 +207,8 @@ int col;
 				
 			switch(game)
 			{
+
+                //Two players mode
 				case 1 :
 					do{
 					
@@ -259,6 +262,9 @@ else
 	}
 					break;
 					
+
+                  //Computer mode
+                    
 				case 2 :
 					
 							do{
